@@ -97,6 +97,19 @@ class Index
             file_put_contents($filePath, $this->writer->flush());
         }
     }
+    
+    /**
+     * Shows index without saving to file    
+     * @return string
+     */
+    public function show()
+    {
+        if ($this->writer instanceof XMLWriter) {
+            $this->writer->endElement();
+            $this->writer->endDocument();
+            return $this->writer->flush();
+        }
+    }
 
     /**
      * Sets whether the resulting file will be gzipped or not.
