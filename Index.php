@@ -99,7 +99,7 @@ class Index
     }
     
     /**
-     * Shows index without saving to file    
+     * Returns content of index without saving to file (for dynamic sitemaps)
      * @return string
      */
     public function show()
